@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+main()
+{
+	int a;
+	cout<<"enter the no of process";
+	cin>>a;
+	
+	int AT[a];
+	int BT[a];
+	int CT[a];int TAT[a];int WT[a]; 
+	for(int i=0;i<a;i++)
+	{
+		cout<<" enter arived time and Execution time ";
+		cin>>AT[i]>>BT[i];
+	}CT[0]=BT[0]-AT[0];
+		for(int i=1;i<a;i++)
+	{if(CT[i-1]>AT[i])
+	{
+		CT[i]=CT[i-1]+BT[i];
+	}else
+	{
+		CT[i]=AT[i]+BT[i];
+	}
+	//	CT[i]=BT[i]-CT[i];
+		
+	}
+	for(int i=0;i<a;i++)
+	{
+		TAT[i]=CT[i]-AT[i];
+	}
+	for(int i=0;i<a;i++)
+	{
+		WT[i]=TAT[i]-BT[i];
+	}
+	cout<<"result";
+	cout<<"computation time\n";
+	for(int i=0;i<a;i++)
+	{
+		cout<<CT[i]<<"\n";
+	}
+	cout<<"TAT time\n";
+	for(int i=0;i<a;i++)
+	{
+		cout<<TAT[i]<<"\n";
+	}
+	cout<<"waiting time\n";
+	for(int i=0;i<a;i++)
+	{
+		cout<<WT[i]<<"\n";
+	}
+	
+
+}
+
+  Output
+
+enter the no of process4
+ enter arived time and Execution time 0
+3
+ enter arived time and Execution time 1
+6
+ enter arived time and Execution time 4
+4
+ enter arived time and Execution time 6
+2
+resultcomputation time
+3
+9
+13
+15
+TAT time
+3
+8
+9
+9
+waiting time
+0
+2
+5
+7
+
+--------------------------------
+Process exited after 25.98 seconds with return value 0
+Press any key to continue . . .
