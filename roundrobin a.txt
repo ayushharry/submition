@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{int n;
+cout<<"enter the number of process";
+cin>>n;
+int at[n],bt[n],tat[n],wt[n],p[n],avg_wt;
+cout<<"enter the arrival and time burst ";
+for(int i=0;i<n;i++)
+{ 
+cin>>at[i]>>bt[i];	
+p[i]=i+1;  
+}
+cout<<"\tP_ID"<<"\tAT"<<"\tBT"<<endl;	
+
+for(int i=0;i<n;i++)
+{ 
+cout<<"\t"<<p[i]<<"\t"<<at[i]<<"\t"<<bt[i]<<endl;	
+}
+
+for(int i=0;i<n-1;i++)
+{
+	for (int j=i+1;j<=n;j++)
+	{ if(at[j-1]>at[j])
+	  swap(p[j-1],p[j]);
+	  swap(at[j-1],at[j]);
+	  swap(bt[j-1],bt[j]);	
+	}
+}
+
+for(int i=0;i<n;i++)
+{ 
+cout<<"\t"<<p[i]<<"\t"<<at[i]<<"\t"<<bt[i]<<endl;	
+}
+int tq=2;
+for(int i;i<n;i++)
+bt[i]
+
+
+return 0;	
+}
