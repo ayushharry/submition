@@ -1,0 +1,97 @@
+#include<iostream>
+using namespace std;
+int mutex=1,e=10,n,f=0,c=0;
+int producer()
+{
+	mutex--;
+    f++;
+    e--;
+    c++;
+    cout<<"\nproducer is producing ::"<<c<<endl;
+    mutex++;
+}
+int consumer()
+{
+	mutex--;
+    f--;
+    e++;
+    cout<<"\nconsuming  :"<<c;
+c--;    
+mutex++;
+}
+int main()
+{
+	
+while(1)
+{
+cout<<"\nenter ur choice\n1.producer\n2.consumer\n3.exit\n";
+cin>>n;
+switch(n)
+{
+	case 1: if(mutex==1&&e!=0)
+           {
+	        producer();
+            }else
+             {
+               cout<<"\nproducer is waiting\n";
+             }break;
+    case 2: if(mutex==1&&f!=0)
+             {
+	           consumer();
+              }else{
+	              cout<<"\nconsumer is waiting\n";
+                   }break;
+    case 3: exit(0);
+    default :continue; 
+}
+}
+}
+
+output::
+enter ur choice
+1.producer
+2.consumer
+3.exit
+1
+
+producer is producing ::1
+
+enter ur choice
+1.producer
+2.consumer
+3.exit
+1
+
+producer is producing ::2
+
+enter ur choice
+1.producer
+2.consumer
+3.exit
+2
+
+consuming  :2
+enter ur choice
+1.producer
+2.consumer
+3.exit
+2
+
+consuming  :1
+enter ur choice
+1.producer
+2.consumer
+3.exit
+2
+
+consumer is waiting
+
+enter ur choice
+1.producer
+2.consumer
+3.exit
+3
+
+--------------------------------
+Process exited after 16.37 seconds with return value 0
+Press any key to continue . . .
