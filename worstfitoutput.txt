@@ -1,0 +1,27 @@
+Enter the no memory spaces available intially
+4
+Enter size of memory spaces
+10
+2
+6
+3
+Enter number of process
+4
+Enter size of process
+2
+6
+3
+1
+Space allocated in partition number=4 process no=1
+8 6 3 2
+Space allocated in partition number=4 process no=2
+2 6 3 2
+Space allocated in partition number=4 process no=3
+3 3 2 2
+Space allocated in partition number=4 process no=4
+2 3 2 2
+Size of memory left=
+2 2 2 3
+--------------------------------
+Process exited after 16 seconds with return value 0
+Press any key to continue . . .
